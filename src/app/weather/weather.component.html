@@ -1,0 +1,32 @@
+<div class="component">
+    <div class="card">
+        <div class="search">
+            <form [formGroup]="weatherForm" (ngSubmit)="checkWeather()">
+                <input #inp type="text" placeholder="Enter City Name" spellcheck="false" formControlName="city">
+                <button  type="submit" ><img src="../../assets/images/search.png" alt=""></button>
+            </form>
+        </div>
+    
+        <div class="weather">
+            <img src="../../assets/images/rain.png" class="weather-icon">
+            <h2 class="temp">22°C</h2>
+            <h2 class="city">City</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="../../assets/images/humidity.png">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="../../assets/images/wind.png">
+                    <div>
+                        <p class="wind">15 km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

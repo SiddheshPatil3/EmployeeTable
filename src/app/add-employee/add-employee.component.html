@@ -1,0 +1,90 @@
+<div mat-dialog-title>
+    <h1>Employee Form</h1>
+</div>
+
+<form [formGroup]="empForm" (ngSubmit)="formSubmit()">
+<div mat-dialog-content class="pt-10">
+
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput type="text" id="firstname"  placeholder="Ex. Virat" formControlName="firstname">
+            <small class="td" *ngIf="empForm.controls['firstname'].touched && empForm.hasError('required', 'firstname') ">
+                FirstName is Required</small>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label> 
+            <input matInput type="text" placeholder="Ex. Kohli" formControlName="lastname">
+            <small class="td" *ngIf="empForm.controls['lastname'].touched && empForm.hasError('required', 'lastname') ">
+                LastName is Required</small>
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="text" placeholder="Ex. test@gmail" formControlName="email">
+            <span class="td" *ngIf="empForm.controls['email'].touched && empForm.hasError('required', 'email') ">Email is Required</span>
+            <span class="td" *ngIf="empForm.hasError('email')">Email must be a valid email address</span>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dob">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-radio-group aria-label="Select an option" formControlName="gender">
+            <mat-label><b>Gender</b></mat-label>
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
+            <mat-radio-button value="others">Others</mat-radio-button>
+        </mat-radio-group>
+    </div>
+
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Education</mat-label>
+            <mat-select formControlName="education">
+              <mat-option *ngFor="let item of education" [value]="item">
+                {{item}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>    
+          
+          <mat-form-field appearance="outline">
+            <mat-label>Company</mat-label>
+            <input matInput type="text" placeholder="Ex. Google" formControlName="company">
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Experiance</mat-label>
+            <input matInput type="number" placeholder="Ex. 4" formControlName="experiance">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Package</mat-label>
+            <input matInput type="number" placeholder="Ex. 10" formControlName="package">
+            <mat-hint>In rupees</mat-hint>
+        </mat-form-field>
+    </div>
+</div>
+
+<div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <!-- <button mat-raised-button color="primary" type="submit" *ngIf="data" >Update</button>
+    <button mat-raised-button color="primary" type="submit" *ngIf="!data">Save</button> -->
+
+    <!-- OR -->
+
+    <button mat-raised-button color="primary" [disabled]="empForm.invalid" type="submit" >{{ data ? 'Update' : 'Save'}}</button>
+
+</div>
+</form>

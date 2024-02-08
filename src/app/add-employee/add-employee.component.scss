@@ -1,0 +1,30 @@
+// :host {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//   }
+
+.row{
+    display: flex;
+    gap: 10px;
+
+    mat-form-field{
+        width: 100%;
+    }
+}
+
+.pt-10{
+    padding-top: 10px;
+}
+
+.action{
+    padding: 0px 25px 20px;
+
+    button{
+        flex: 1;
+    }
+}
+
+.td{
+    color: red;
+}

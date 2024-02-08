@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AddEmployeeComponent } from '../app/add-employee/add-employee.component';
-import { AuthService } from './services/auth.service';
+import { AddEmployeeComponent } from '../../add-employee/add-employee.component';
+import { AuthService } from '../../services/auth.service'
 import {MatPaginator } from '@angular/material/paginator';
 import {MatSort } from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
@@ -10,12 +10,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-emp-data',
+  templateUrl: './emp-data.component.html',
+  styleUrls: ['./emp-data.component.scss']
 })
-
-export class AppComponent implements OnInit{
+export class EmpDataComponent {
 
   displayedColumns: string[] = [
     'id', 

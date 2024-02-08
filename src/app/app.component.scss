@@ -1,0 +1,46 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+ .main-body{
+  padding-top: 20px;
+  margin: 0 auto;
+  max-width: 1248px;
+  mat-form-field{
+    width: 100%;
+  }
+ }
+
+ .content{
+  padding: 32px;
+ }
+
+ .box1 {
+  display: inline-block;
+  width: 75%;
+  box-sizing: border-box; 
+ 
+}
+
+.box2{
+  display: inline-block;
+  width: 24%; 
+  box-sizing: border-box; 
+  padding: 20px;
+  text-align: end;
+}
+
+.addEmp{
+  margin-right: 10px;
+    width: 200px;
+    height: 36px;
+    color: red;
+}
+
+.text-danger{
+  color: red;
+}
+
+.wd{
+  width: 101%;
+}
